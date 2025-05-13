@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Game>
+    <English>
+        <Story>
+            <line>You wake up in an empty room</line>
+            <line>Oh a butterfly</line>
+            <line>A person says hello to you</line>
+            <line>You are in a strange place</line>
+            <line>You walk in the woods</line>
+        </Story>
+        <Menu>
+            <menu>Main Menu</menu>
+            <story>Story</story>
+            <walk>Walk</walk>
+            <user>User</user>
+            <level>Level</level>
+        </Menu>
+    </English>
+    <French>
+        <Story>
+            <line>Tu te reveilles dans une chambre vide</line>
+            <line>Oh un papillon</line>
+            <line>Une personne te dis bonjour</line>
+            <line>Tu es dans un endroit étrange</line>
+            <line>Tu te balades dans la forêt</line>
+        </Story>
+        <Menu>
+            <menu>Menu Principal</menu>
+            <story>Histoire</story>
+            <walk>Marcher</walk>
+            <user>Utilisateur</user>
+            <level>Niveau</level>
+        </Menu>
+    </French>
+</Game>
