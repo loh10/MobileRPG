@@ -7,9 +7,8 @@ using static Utils;
 public class UITextDisplayer : MonoBehaviour
 {
     public string lineName;
-    private Languages _currentLanguage = Languages.English;
     private void Start()
     {
-        GetComponent<TextMeshProUGUI>().text =XmlLineDisplayer( lineName, _currentLanguage);
+        GetComponent<TextMeshProUGUI>().text =XmlLineDisplayer( lineName);
     }
 }

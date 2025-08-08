@@ -41,7 +41,7 @@ public class StoryDisplayer : MonoBehaviour
     private void NextStoryLine()
     {
         _currentIndex = SetNextLineIndex(_lastIndex, _totalLines);
-        string lineToDisplay = XmlLineDisplayer( _currentIndex, _currentLanguage);
+        string lineToDisplay = XmlLineDisplayer( _currentIndex);
         if (!string.IsNullOrEmpty(lineToDisplay))
         {
             storyText.text = lineToDisplay;
@@ -53,15 +53,15 @@ public class StoryDisplayer : MonoBehaviour
         _lastIndex = _currentIndex;
     }
 
-    private int SetNextLineIndex(int currentIndex, int maxIndex)
+    private int SetNextLineIndex(int current_index, int max_index)
     {
         int nextIndex = 0;
         int attempts = 0;
-        while (nextIndex == currentIndex && attempts < 10)
+        while (nextIndex == current_index && attempts < 10)
         {
             attempts++;
-            nextIndex = Random.Range(0, maxIndex);
-            if (nextIndex == currentIndex)
+            nextIndex = Random.Range(0, max_index);
+            if (nextIndex == current_index)
             {
                 Debug.LogWarning("Next index is the same as the current index. Generating a new one.");
             }

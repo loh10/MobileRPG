@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,21 +9,21 @@ public class DisplayUserInformation : MonoBehaviour
     public TextMeshProUGUI userLevelText;
 
     [Header("XP")]
-    public TextMeshProUGUI userXPText;
-    public Image userXPBarImage;
+    public TextMeshProUGUI userXpText;
+    public Image userXpBarImage;
 
     [Header("HP")]
-    public TextMeshProUGUI userHPText;
-    public Image userHPBarImage;
+    public TextMeshProUGUI userHpText;
+    public Image userHpBarImage;
 
     [Header("Gold")]
     public TextMeshProUGUI userGoldText;
 
-    [Header("User Visual")] public TextMeshProUGUI userDescriptionText;
+    [Header("User Visual")]
+    public TextMeshProUGUI userDescriptionText;
     public Image userAvatarImage;
     public Image userBackgroundImage;
 
-    public Languages language = Languages.English;
 
 
     private void Start()
@@ -43,13 +42,13 @@ public class DisplayUserInformation : MonoBehaviour
     private void DisplayUserInfo(User user)
     {
         userNameText.text = user.userName;
-        userLevelText.text = $"{XmlLineDisplayer("level", language)} {user.userLevel}";
+        userLevelText.text = $"{XmlLineDisplayer("level")} {user.userLevel}";
         // XP
-        userXPText.text = $"{user.userCurrentXP} / {user.userMaxXP}";
-        userXPBarImage.fillAmount = (float)user.userCurrentXP / user.userMaxXP;
+        userXpText.text = $"{user.userCurrentXp} / {user.userMaxXp}";
+        userXpBarImage.fillAmount = (float)user.userCurrentXp / user.userMaxXp;
         //HP
-        userHPText.text = $"{user.userCurrentHP} / {user.userMaxHP}";
-        userHPBarImage.fillAmount = (float)user.userCurrentHP / user.userMaxHP;
+        userHpText.text = $"{user.userCurrentHp} / {user.userMaxHp}";
+        userHpBarImage.fillAmount = (float)user.userCurrentHp / user.userMaxHp;
         //Gold
         userGoldText.text = user.userCurrentGold.ToString();
         //Other

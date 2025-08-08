@@ -1,0 +1,23 @@
+# ninja log v5
+0	1309	7762063773068748	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9917da367d805d54
+45	332	7762063763371433	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	79e7fa5fe603825a
+333	484	7762063764678718	C:/Users/natur/Documents/__DEV__/MobileRPG/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1h5n01a2/obj/arm64-v8a/libswappywrapper.so	e04ffd367973f4cf
+26	1038	7762063770388650	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5f77bccf6e6d4eee
+14	1042	7762063770404215	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1b9335040990204d
+38	1219	7762063772216876	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b94b21c115d80d77
+5	1069	7762063770716919	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	23d6f1cd263a0940
+9	1104	7762063771060812	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6e1cbea443c3bf0e
+33	1074	7762063770752534	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	41565894b0db9d5e
+19	1244	7762063772448004	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7667078b0ea4bdc1
+1309	1401	7762063774024461	C:/Users/natur/Documents/__DEV__/MobileRPG/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1h5n01a2/obj/arm64-v8a/libgame.so	290cef1f29ba03eb
+64	214	7762092865428255	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	79e7fa5fe603825a
+215	387	7762092866982135	C:/Users/natur/Documents/__DEV__/MobileRPG/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1h5n01a2/obj/arm64-v8a/libswappywrapper.so	e04ffd367973f4cf
+20	1089	7762092874141399	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5f77bccf6e6d4eee
+48	1140	7762092874660803	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1b9335040990204d
+27	1149	7762092874733866	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	23d6f1cd263a0940
+32	1171	7762092874967891	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	41565894b0db9d5e
+14	1200	7762092875248218	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6e1cbea443c3bf0e
+56	1268	7762092875923797	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b94b21c115d80d77
+39	1354	7762092876763549	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7667078b0ea4bdc1
+7	1440	7762092877622568	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9917da367d805d54
+1441	1540	7762092878640036	C:/Users/natur/Documents/__DEV__/MobileRPG/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1h5n01a2/obj/arm64-v8a/libgame.so	290cef1f29ba03eb

@@ -1,8 +1,12 @@
-using System;
 using UnityEngine;
+using System.Xml;
 using static Utils;
+
 public class XmlManager : MonoBehaviour
 {
+    public string xmlFileName = "Game";
+    private XmlDocument _xmlDoc;
+
     private void Awake()
     {
         InitializeXml();
@@ -10,8 +14,14 @@ public class XmlManager : MonoBehaviour
 
     private void InitializeXml()
     {
-        string path = Application.dataPath + "/StreamingAssets/Game.xml";
-        XmlLoader(path);
-    }
+        var xmlTextAsset = Resources.Load<TextAsset>(xmlFileName);
 
+        if (!xmlTextAsset)
+            return;
+
+        _xmlDoc = new XmlDocument();
+        _xmlDoc.Load(new System.IO.StringReader(xmlTextAsset.text));
+        SetCurrentXmlDoc(_xmlDoc);
+
+    }
 }

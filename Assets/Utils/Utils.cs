@@ -6,7 +6,10 @@ public static class Utils
 {
     private static XmlDocument _currentXmlDoc;
     public static int totalLines;
-    public static string XmlLineDisplayer( int index, Languages language = Languages.English)
+    public static Languages language = Languages.English;
+
+    #region XmlManagement
+    public static string XmlLineDisplayer( int index)
     {
         string line = "";
         try
@@ -16,7 +19,7 @@ public static class Utils
             if (languageNode != null)
             {
                 XmlNodeList lines = languageNode.SelectNodes("line");
-                if (index >= 0 && index < lines.Count)
+                if (index >= 0 && lines != null && index < lines.Count)
                 {
                     line = lines[index].InnerText;
                 }
@@ -36,29 +39,22 @@ public static class Utils
         }
         return line;
     }
-
-    public static string XmlLineDisplayer(string lineName, Languages language = Languages.English)
+    public static string XmlLineDisplayer(string line_name)
     {
         string line = "";
-        if(_currentXmlDoc == null)
-        {
-            Debug.LogError("XML document is not loaded. Please load the XML file first.");
-            return line;
-        }
         try
         {
-            // Navigate to the correct language and story node
             XmlNode languageNode = _currentXmlDoc.SelectSingleNode($"/Game/{language}/Menu");
             if (languageNode != null)
             {
-                XmlNode lineNode = languageNode.SelectSingleNode(lineName);
+                XmlNode lineNode = languageNode.SelectSingleNode(line_name);
                 if (lineNode != null)
                 {
                     line = lineNode.InnerText;
                 }
                 else
                 {
-                    Debug.LogError($"Line with name '{lineName}' not found in the selected language.");
+                    Debug.LogError($"Line with name '{line_name}' not found in the selected language.");
                 }
             }
             else
@@ -72,7 +68,6 @@ public static class Utils
         }
         return line;
     }
-
     public static void XmlLoader(string path)
     {
 
@@ -101,5 +96,15 @@ public static class Utils
             Debug.LogError("Default language node 'English' not found in the XML.");
         }
         _currentXmlDoc = xmlDoc;
+    }
+    public static void SetCurrentXmlDoc(XmlDocument xml_doc)
+    {
+        _currentXmlDoc = xml_doc;
+    }
+    #endregion
+
+    public static void SetCurrentLanguage(Languages new_language)
+    {
+        language = new_language;
     }
 }
