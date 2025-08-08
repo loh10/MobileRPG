@@ -21,7 +21,7 @@ public class XmlManager : MonoBehaviour
 
         _xmlDoc = new XmlDocument();
         _xmlDoc.Load(new System.IO.StringReader(xmlTextAsset.text));
-        SetCurrentXmlDoc(_xmlDoc);
+        XmlLoader(_xmlDoc);
 
     }
 }

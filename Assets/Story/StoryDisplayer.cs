@@ -11,45 +11,38 @@ public class StoryDisplayer : MonoBehaviour
     public TextMeshProUGUI storyText;
     public static event Action OnWalkButtonClicked;
     public Button walkButton;
-    private Languages _currentLanguage = Languages.English;
     private int _lastIndex = -1;
     private int _currentIndex = -1;
     private int _totalLines = 0;
 
-
-    private void Awake()
-    {
-        _totalLines = totalLines;
-    }
-
     private void OnEnable()
     {
+        _totalLines = totalLines;
+        _currentIndex = SetNextLineIndex(_lastIndex, _totalLines);
+        Walk();
         walkButton.onClick.AddListener(Walk);
+        Events.OnLanguageChanged.AddListener(DisplayStoryLine);
+        
     }
 
     private void OnDisable()
     {
         walkButton.onClick.RemoveAllListeners();
+        Events.OnLanguageChanged.RemoveListener(DisplayStoryLine);
     }
 
     private void Walk()
     {
         OnWalkButtonClicked?.Invoke();
-        NextStoryLine();
+        _currentIndex = SetNextLineIndex(_lastIndex, _totalLines);
+        DisplayStoryLine();
     }
 
-    private void NextStoryLine()
+    private void DisplayStoryLine()
     {
-        _currentIndex = SetNextLineIndex(_lastIndex, _totalLines);
+
         string lineToDisplay = XmlLineDisplayer( _currentIndex);
-        if (!string.IsNullOrEmpty(lineToDisplay))
-        {
-            storyText.text = lineToDisplay;
-        }
-        else
-        {
-            Debug.LogError("Failed to retrieve the story line.");
-        }
+        storyText.text = lineToDisplay;
         _lastIndex = _currentIndex;
     }
 
@@ -61,10 +54,6 @@ public class StoryDisplayer : MonoBehaviour
         {
             attempts++;
             nextIndex = Random.Range(0, max_index);
-            if (nextIndex == current_index)
-            {
-                Debug.LogWarning("Next index is the same as the current index. Generating a new one.");
-            }
         }
 
         return nextIndex;
