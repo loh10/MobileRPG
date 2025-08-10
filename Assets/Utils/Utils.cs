@@ -88,6 +88,27 @@ public static class Utils
 
     #endregion
 
+    #region DatabaseManagement
+
+    #endregion
+
+    #region PasswordManagement
+    public static string Encryption(string password_to_hash)
+    {
+        using (var sha1 = System.Security.Cryptography.SHA1.Create())
+        {
+            byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(password_to_hash);
+            byte[] hashBytes = sha1.ComputeHash(inputBytes);
+            return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+        }
+    }
+
+    public static string Decryption(string password_to_read)
+    {
+        return password_to_read;
+    }
+    #endregion
+
     public static void SetCurrentLanguage(Languages new_language)
     {
         _language = new_language;

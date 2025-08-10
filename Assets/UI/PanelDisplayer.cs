@@ -22,8 +22,6 @@ public class PanelDisplayer : MonoBehaviour
         mainMenuButton.onClick.AddListener(ShowMainMenu);
         storyButton.onClick.AddListener(ShowStory);
         userButton.onClick.AddListener(ShowUser);
-
-        ShowMainMenu();
     }
 
     private void ShowMainMenu()
