@@ -1,15 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Xml;
+using PlayFab;
+using PlayFab.ClientModels;
 using UnityEngine;
 
 public static class Utils
 {
     private static XmlDocument _currentXmlDoc;
     public static int totalLines;
-    private static Languages _language = Languages.English;
+    private static ELanguages _language = ELanguages.English;
+    private static float _lastSaveTime = -10f;
 
     #region XmlManagement
-    public static string XmlLineDisplayer( int index)
+    public static string XmlLineDisplayer(int index)
     {
         string line = "";
         try
@@ -37,6 +41,7 @@ public static class Utils
         {
             Debug.LogError($"Error parsing XML file: {ex.Message}");
         }
+
         return line;
     }
 
@@ -67,6 +72,7 @@ public static class Utils
         {
             Debug.LogError($"Error parsing XML file: {ex.Message}");
         }
+
         return line;
     }
 
@@ -83,12 +89,73 @@ public static class Utils
         {
             Debug.LogError("Default language node 'English' not found in the XML.");
         }
+
         _currentXmlDoc = xml_document;
     }
-
     #endregion
 
     #region DatabaseManagement
+    [System.Serializable]
+    public class PlayerState
+    {
+        public int level;
+        public int gold;
+        public string description;
+        public int currentXp;
+        public int maxXp;
+        public int currentHp;
+        public int maxHp;
+        public int avatarID;
+        public int bannerID;
+    }
+
+    [System.Serializable]
+    public class PlayerInventory
+    {
+        public List<int> itemsId;
+        public int equippedWeaponId;
+        public int equippedChestId;
+        public int equippedLegsId;
+        public int equippedPetId;
+    }
+
+    public static void SaveJson(string json, string key)
+    {
+        if (Time.time - _lastSaveTime < 5f)
+            return;
+        _lastSaveTime = Time.time;
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+                { key, json }
+            }
+        };
+        PlayFabClientAPI.UpdateUserData(request,
+            result => Debug.Log("Data saved successfully!"),
+            error => Debug.LogError($"Error saving data: {error.GenerateErrorReport()}"));
+    }
+
+    public static void LoadInventoryJsonFromPlayFab(string key, Action<string> on_loaded)
+    {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
+            {
+                if (result.Data != null && result.Data.ContainsKey(key))
+                {
+                    string json = result.Data[key].Value;
+                    on_loaded.Invoke(json);
+                }
+                else
+                {
+                    Debug.LogError($"Clé '{key}' non trouvée dans les UserData PlayFab.");
+                }
+            },
+            error =>
+            {
+                Debug.LogError("Erreur lors de la récupération des UserData: " + error.GenerateErrorReport());
+            });
+    }
+
 
     #endregion
 
@@ -102,14 +169,9 @@ public static class Utils
             return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
         }
     }
-
-    public static string Decryption(string password_to_read)
-    {
-        return password_to_read;
-    }
     #endregion
 
-    public static void SetCurrentLanguage(Languages new_language)
+    public static void SetCurrentLanguage(ELanguages new_language)
     {
         _language = new_language;
     }

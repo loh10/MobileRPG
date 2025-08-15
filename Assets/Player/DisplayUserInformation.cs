@@ -1,10 +1,13 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Utils;
+using static Events;
 
 public class DisplayUserInformation : MonoBehaviour
 {
+    public User currentUser;
     public TextMeshProUGUI userNameText;
     public TextMeshProUGUI userLevelText;
 
@@ -24,36 +27,38 @@ public class DisplayUserInformation : MonoBehaviour
     public Image userAvatarImage;
     public Image userBackgroundImage;
 
-
-
     private void Start()
     {
-        User user = GetComponent<User>();
-        if (user != null)
-        {
-            DisplayUserInfo(user);
-        }
-        else
-        {
-            Debug.LogError("User component not found on this GameObject.");
-        }
+        DisplayUserInfo(currentUser);
+    }
+
+    private void OnEnable()
+    {
+        OnUserUpdate.AddListener(UpdatePlayerInformation);
+    }
+
+    private void OnDisable()
+    {
+        OnUserUpdate.RemoveListener(UpdatePlayerInformation);
+    }
+
+    private void UpdatePlayerInformation(User updated_user)
+    {
+        currentUser = updated_user;
+        DisplayUserInfo(currentUser);
     }
 
     private void DisplayUserInfo(User user)
     {
         userNameText.text = user.userName;
         userLevelText.text = $"{XmlLineDisplayer("level")} {user.userLevel}";
-        // XP
         userXpText.text = $"{user.userCurrentXp} / {user.userMaxXp}";
         userXpBarImage.fillAmount = (float)user.userCurrentXp / user.userMaxXp;
-        //HP
         userHpText.text = $"{user.userCurrentHp} / {user.userMaxHp}";
         userHpBarImage.fillAmount = (float)user.userCurrentHp / user.userMaxHp;
-        //Gold
         userGoldText.text = user.userCurrentGold.ToString();
-        //Other
         userDescriptionText.text = user.userDescription;
         userAvatarImage.sprite = user.userAvatar;
-        userBackgroundImage.sprite = user.userBackground;
+        userBackgroundImage.sprite = user.userBanner;
     }
 }

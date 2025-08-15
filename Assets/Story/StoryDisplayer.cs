@@ -18,8 +18,8 @@ public class StoryDisplayer : MonoBehaviour
     private void OnEnable()
     {
         _totalLines = totalLines;
-        _currentIndex = SetNextLineIndex(_lastIndex, _totalLines);
-        Walk();
+        if(_currentIndex == -1)
+            Walk();
         walkButton.onClick.AddListener(Walk);
         Events.OnLanguageChanged.AddListener(DisplayStoryLine);
         

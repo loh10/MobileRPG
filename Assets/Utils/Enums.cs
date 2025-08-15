@@ -1,11 +1,21 @@
-﻿public enum Languages
+﻿public enum ELanguages
 {
     English,
     French
 }
-public enum GameState
+
+public enum EItemTypes
 {
-    MainMenu,
-    Story,
-    User
+    Chests,
+    Legs,
+    Weapons,
+    Pets
 }
+public enum EStatTypes
+{
+    Strength,
+    Defence,
+    Luck
+}
+
+

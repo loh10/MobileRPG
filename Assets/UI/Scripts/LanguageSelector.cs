@@ -19,8 +19,7 @@ public class LanguageSelector : MonoBehaviour
                 _currentLanguageIndex = 0; // Default to English
                 break;
         }
-        Debug.Log($"Language changed to: {(Languages)_currentLanguageIndex}");
-        Utils.SetCurrentLanguage((Languages)_currentLanguageIndex);
+        Utils.SetCurrentLanguage((ELanguages)_currentLanguageIndex);
         Events.OnLanguageChanged.Invoke();
     }
 }

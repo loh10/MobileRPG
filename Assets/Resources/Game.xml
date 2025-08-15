@@ -7,13 +7,18 @@
             <line>A person says hello to you</line>
             <line>You are in a strange place</line>
             <line>You walk in the woods</line>
+            <line>I need to think of a sentence</line>
+            <line>A spider in the bathroom</line>
+            <line>No inspiration</line>
         </Story>
         <Menu>
-            <menu>Main Menu</menu>
+            <fight>Fight</fight>
             <story>Story</story>
             <walk>Walk</walk>
             <user>User</user>
             <level>Level</level>
+            <inventory>Inventory</inventory>
+            <equip>Equip</equip>
         </Menu>
     </English>
     <French>
@@ -21,15 +26,20 @@
             <line>Tu te reveilles dans une chambre vide</line>
             <line>Oh un papillon</line>
             <line>Une personne te dis bonjour</line>
-            <line>Tu es dans un endroit étrange</line>
-            <line>Tu te balades dans la forêt</line>
+            <line>Tu es dans un endroit etrange</line>
+            <line>Tu te balades dans la foret</line>
+            <line>Faut que je reflechisse a une phrase</line>
+            <line>Une araignee dans la salle de bain</line>
+            <line>Aucune inspiration</line>
         </Story>
         <Menu>
-            <menu>Menu Principal</menu>
+            <fight>Combat</fight>
             <story>Histoire</story>
             <walk>Marcher</walk>
             <user>Utilisateur</user>
             <level>Niveau</level>
+            <inventory>Inventaire</inventory>
+            <equip>Equiper</equip>
         </Menu>
     </French>
 </Game>

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using static Utils;
+using static Events;
 
 public class ConnectionManager : MonoBehaviour
 {
@@ -22,23 +23,21 @@ public class ConnectionManager : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), (dataResult) =>
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), (data_result) =>
         {
-            if (dataResult.Data != null && dataResult.Data.ContainsKey("password"))
+            if (data_result.Data.TryGetValue("password", out var value))
             {
-                string storedPassword = dataResult.Data["password"].Value;
+                string storedPassword = value.Value;
                 if (storedPassword == Encryption(passwordInputField.text))
                 {
+                    OnUserConnected.Invoke(usernameInputField.text);
                     Debug.Log("Connexion réussie !");
                 }
                 else
                 {
+                    //TODO : DISPLAY ERROR
                     Debug.LogError("Mot de passe incorrect.");
                 }
-            }
-            else
-            {
-                Debug.LogError("Aucun mot de passe trouvé pour cet utilisateur.");
             }
         }, OnLoginFailure);
     }
