@@ -1,4 +1,5 @@
 using System;
+using PlayFab;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ public class DisplayUserInformation : MonoBehaviour
     [Header("HP")]
     public TextMeshProUGUI userHpText;
     public Image userHpBarImage;
+    private float _timeForMaxHeal;
 
     [Header("Gold")]
     public TextMeshProUGUI userGoldText;
@@ -27,6 +29,8 @@ public class DisplayUserInformation : MonoBehaviour
     public Image userAvatarImage;
     public Image userBackgroundImage;
 
+    public Button disconnectButton;
+
     private void Start()
     {
         DisplayUserInfo(currentUser);
@@ -35,11 +39,7 @@ public class DisplayUserInformation : MonoBehaviour
     private void OnEnable()
     {
         OnUserUpdate.AddListener(UpdatePlayerInformation);
-    }
-
-    private void OnDisable()
-    {
-        OnUserUpdate.RemoveListener(UpdatePlayerInformation);
+        disconnectButton.onClick.AddListener(DisconnectUser);
     }
 
     private void UpdatePlayerInformation(User updated_user)
@@ -50,15 +50,23 @@ public class DisplayUserInformation : MonoBehaviour
 
     private void DisplayUserInfo(User user)
     {
+        Debug.Log("experience =  " + user.experienceManager.CurrentXp + " / " + user.experienceManager.MaxXp);
         userNameText.text = user.userName;
-        userLevelText.text = $"{XmlLineDisplayer("level")} {user.userLevel}";
-        userXpText.text = $"{user.userCurrentXp} / {user.userMaxXp}";
-        userXpBarImage.fillAmount = (float)user.userCurrentXp / user.userMaxXp;
+        userLevelText.text = $"{XmlLineDisplayer("level")} {user.experienceManager.Level}";
+        userXpText.text = $"{user.experienceManager.CurrentXp} / {user.experienceManager.MaxXp}";
+        userXpBarImage.fillAmount = (float)user.experienceManager.CurrentXp / user.experienceManager.MaxXp;
         userHpText.text = $"{user.userCurrentHp} / {user.userMaxHp}";
         userHpBarImage.fillAmount = (float)user.userCurrentHp / user.userMaxHp;
-        userGoldText.text = user.userCurrentGold.ToString();
+        userGoldText.text = user.userCurrentGold + " g";
         userDescriptionText.text = user.userDescription;
         userAvatarImage.sprite = user.userAvatar;
         userBackgroundImage.sprite = user.userBanner;
+    }
+
+    private void DisconnectUser()
+    {
+        PlayFabClientAPI.ForgetAllCredentials();
+        currentUser = null;
+        OnUserDisconnected.Invoke();
     }
 }

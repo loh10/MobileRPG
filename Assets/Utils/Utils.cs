@@ -76,6 +76,66 @@ public static class Utils
         return line;
     }
 
+    public static string XmlMonsterName(string name)
+
+    {
+        string line = "";
+        try
+        {
+            XmlNode languageNode = _currentXmlDoc.SelectSingleNode($"/Game/{_language}/Monsters");
+            if (languageNode != null)
+            {
+                XmlNode lineNode = languageNode.SelectSingleNode(name);
+                if (lineNode != null)
+                {
+                    line = lineNode.InnerText;
+                }
+                else
+                {
+                    Debug.LogError($"Line with name '{name}' not found in the selected language.");
+                }
+            }
+            else
+            {
+                Debug.LogError($"Language node '{_language}' not found in the XML.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error parsing XML file: {ex.Message}");
+        }
+
+        return line;
+    }
+
+
+    public static string XmlItemName(string line_name, EItemTypes type)
+    {
+        string line = "";
+        try
+        {
+            XmlNode languageNode = _currentXmlDoc.SelectSingleNode($"/Game/{_language}/Equipment/{type}");
+            if (languageNode != null)
+            {
+                XmlNode lineNode = languageNode.SelectSingleNode(line_name);
+                if (lineNode != null)
+                {
+                    line = lineNode.InnerText;
+                }
+                else
+                {
+                    Debug.LogError($"Line with name '{line_name}' not found in the selected language.");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error parsing XML file: {ex.Message}");
+        }
+
+        return line;
+    }
+
     public static void XmlLoader(XmlDocument xml_document)
     {
         XmlNode languageNode = xml_document.SelectSingleNode("/Game/English/Story");
@@ -98,6 +158,7 @@ public static class Utils
     [System.Serializable]
     public class PlayerState
     {
+        public string name;
         public int level;
         public int gold;
         public string description;
@@ -119,9 +180,9 @@ public static class Utils
         public int equippedPetId;
     }
 
-    public static void SaveJson(string json, string key)
+    public static void SaveJson(string json, string key, bool force_save = false)
     {
-        if (Time.time - _lastSaveTime < 5f)
+        if (Time.time - _lastSaveTime < 5f && !force_save)
             return;
         _lastSaveTime = Time.time;
         var request = new UpdateUserDataRequest
@@ -136,7 +197,7 @@ public static class Utils
             error => Debug.LogError($"Error saving data: {error.GenerateErrorReport()}"));
     }
 
-    public static void LoadInventoryJsonFromPlayFab(string key, Action<string> on_loaded)
+    public static void LoadJsonFromPlayFab(string key, Action<string> on_loaded)
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
             {
@@ -150,13 +211,8 @@ public static class Utils
                     Debug.LogError($"Clé '{key}' non trouvée dans les UserData PlayFab.");
                 }
             },
-            error =>
-            {
-                Debug.LogError("Erreur lors de la récupération des UserData: " + error.GenerateErrorReport());
-            });
+            error => { Debug.LogError("Erreur lors de la récupération des UserData: " + error.GenerateErrorReport()); });
     }
-
-
     #endregion
 
     #region PasswordManagement

@@ -7,9 +7,12 @@ public class PanelDisplayer : MonoBehaviour
 {
     //ConnectionHandler
     public GameObject connectionPanel;
-    //MainMenu
-    public GameObject mainMenuPanel;
-    public Button mainMenuButton;
+    //Fight
+    public GameObject fightPanel;
+    public Button fightButton;
+    //Shop
+    public GameObject shopPanel;
+    public Button shopButton;
     //Story
     public GameObject storyPanel;
     public Button storyButton;
@@ -20,39 +23,39 @@ public class PanelDisplayer : MonoBehaviour
     public GameObject userPanel;
     public Button userButton;
 
-
     private GameObject _currentPanel;
-
 
     private void Start()
     {
-        mainMenuButton.onClick.AddListener(ShowMainMenu);
+        fightButton.onClick.AddListener(ShowFight);
+        shopButton.onClick.AddListener(ShowShop);
         storyButton.onClick.AddListener(ShowStory);
         userButton.onClick.AddListener(ShowUser);
         inventoryButton.onClick.AddListener(ShowInventory);
         ShowConnectionPanel();
+        OnUserDisconnected.AddListener(ShowConnectionPanel);
     }
-
     private void OnEnable()
     {
-        OnUserConnected.AddListener(ShowMainMenu);
+        OnUserConnected.AddListener(OnConnected);
     }
 
-    private void OnDisable()
+    private void OnConnected(string arg0)
     {
-        OnUserConnected.RemoveListener(ShowMainMenu);
-    }
-    private void ShowMainMenu(string arg0)
-    {
-        ShowMainMenu();
+        ShowStory();
     }
     private void ShowConnectionPanel()
     {
         ShowPanel(connectionPanel);
     }
-    private void ShowMainMenu()
+    private void ShowFight()
     {
-        ShowPanel(mainMenuPanel);
+        ShowPanel(fightPanel);
+    }
+    private void ShowShop()
+    {
+        ShowPanel(shopPanel);
+
     }
     private void ShowStory()
     {

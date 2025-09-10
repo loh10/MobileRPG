@@ -1,3 +1,4 @@
+using System;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;
@@ -10,6 +11,25 @@ public class ConnectionManager : MonoBehaviour
 {
     public TMP_InputField usernameInputField;
     public TMP_InputField passwordInputField;
+
+    private void OnEnable()
+    {
+        string password = PlayerPrefs.GetString("password", "");
+        string username = PlayerPrefs.GetString("username", "");
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password)) return;
+        usernameInputField.text = username;
+        passwordInputField.text = password;
+        Connect();
+        OnUserDisconnected.AddListener(ResetInformation);
+    }
+
+    private void ResetInformation()
+    {
+        usernameInputField.text = "";
+        passwordInputField.text = "";
+        PlayerPrefs.DeleteKey("username");
+        PlayerPrefs.DeleteKey("password");
+    }
 
     public void Connect()
     {
@@ -30,7 +50,10 @@ public class ConnectionManager : MonoBehaviour
                 string storedPassword = value.Value;
                 if (storedPassword == Encryption(passwordInputField.text))
                 {
+                    PlayerPrefs.SetString("username", usernameInputField.text);
+                    PlayerPrefs.SetString("password", passwordInputField.text);
                     OnUserConnected.Invoke(usernameInputField.text);
+
                     Debug.Log("Connexion réussie !");
                 }
                 else
@@ -63,13 +86,13 @@ public class ConnectionManager : MonoBehaviour
                     { "password", Encryption(passwordInputField.text) }
                 }
             };
-            PlayFabClientAPI.UpdateUserData(updateRequest, (updateResult) =>
+            PlayFabClientAPI.UpdateUserData(updateRequest, (update_result) =>
             {
                 var displayNameRequest = new UpdateUserTitleDisplayNameRequest
                 {
                     DisplayName = usernameInputField.text
                 };
-                PlayFabClientAPI.UpdateUserTitleDisplayName(displayNameRequest, (displayNameResult) =>
+                PlayFabClientAPI.UpdateUserTitleDisplayName(displayNameRequest, (display_name_result) =>
                 {
                     Debug.Log("Compte créé avec succès et display name défini !");
                 }, OnRegisterFailure);

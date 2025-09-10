@@ -5,23 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84669dc6-d8cc-4ef5-a6b9-17583b7181e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Drop.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Drop.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Stats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Stats.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/AndroidProjectSystem.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/1h5n01a2/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/1h5n01a2/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Sprite/Enemy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Sprite/Enemy1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inventory/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inventory/StatsDisplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inventory/StatsDisplayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject/Chest.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject/Chest.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites/Chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites/Chest.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDisplayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDisplayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject/Snake.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject/Snake.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites/Snake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites/Snake.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject/Sword.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject/Sword.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites/Sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites/Sword.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Managers/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Managers/ConnectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/Icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/Icon1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/banner1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/banner1.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/DisplayUserInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/DisplayUserInformation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/UserState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/UserStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/UserState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/UserStat.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/LanguageSelector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/LanguageSelector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/PanelDisplayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/PanelDisplayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UITextDisplayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UITextDisplayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Inventory/ItemDisplay.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Inventory/ItemDisplay.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Scripts/PanelDisplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Scripts/PanelDisplayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Utils/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Enums.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Utils/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Events.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Utils/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Utils.cs" afterDir="false" />
@@ -43,12 +78,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0004165128be453398769144f78ad2921eae00/7e/b854de55/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dca21659871f1e6579d6f1ee64361ada6b6e82f39fe304c6e221447deef666/System.Xml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Market/MarketItemDisplayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Market/MarketUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Player/ExperienceManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/Inventory/EquipmentDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/Inventory/ScrollViewSizer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -73,7 +113,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Inspections-IDEA&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -92,6 +132,7 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
@@ -103,6 +144,7 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -133,6 +175,9 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Attach to Device" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -159,6 +204,29 @@
       <workItem from="1755201307642" duration="5000" />
       <workItem from="1755201338504" duration="4472000" />
       <workItem from="1755247810296" duration="7325000" />
+      <workItem from="1755348612580" duration="1886000" />
+      <workItem from="1755379687323" duration="2592000" />
+      <workItem from="1755387850403" duration="2229000" />
+      <workItem from="1755473546099" duration="2358000" />
+      <workItem from="1756321623832" duration="29000" />
+      <workItem from="1756392496794" duration="1329000" />
+      <workItem from="1756645864735" duration="1885000" />
+      <workItem from="1756656335132" duration="10553000" />
+      <workItem from="1756721218946" duration="291000" />
+      <workItem from="1756721521466" duration="815000" />
+      <workItem from="1756771383739" duration="2891000" />
+      <workItem from="1756813491216" duration="1216000" />
+      <workItem from="1756991194504" duration="67000" />
+      <workItem from="1756991883781" duration="4979000" />
+      <workItem from="1757081472888" duration="9203000" />
+      <workItem from="1757180645282" duration="529000" />
+      <workItem from="1757181241693" duration="6123000" />
+      <workItem from="1757251765456" duration="259000" />
+      <workItem from="1757252297548" duration="3791000" />
+      <workItem from="1757323514760" duration="4481000" />
+      <workItem from="1757334585105" duration="7833000" />
+      <workItem from="1757342858691" duration="7564000" />
+      <workItem from="1757412109557" duration="9546000" />
     </task>
     <servers />
   </component>

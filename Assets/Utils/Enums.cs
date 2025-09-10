@@ -6,7 +6,7 @@
 
 public enum EItemTypes
 {
-    Chests,
+    ChestPlate,
     Legs,
     Weapons,
     Pets

@@ -11,16 +11,16 @@ public class StatsDisplayer : MonoBehaviour
 
     private void Start()
     {
-        OnItemEquipped.AddListener(arg0 => DisplayStat(User.instance.userState));
-        OnItemUnequipped.AddListener(arg0 => DisplayStat(User.instance.userState));
+        OnItemEquipped.AddListener(arg0 => DisplayStat(User.instance.userStats));
+        OnItemUnequipped.AddListener(arg0 => DisplayStat(User.instance.userStats));
     }
 
     private void OnEnable()
     {
-        DisplayStat(User.instance.userState);
+        DisplayStat(User.instance.userStats);
     }
 
-    private void DisplayStat(UserState all_stats)
+    private void DisplayStat(UserStats all_stats)
     {
         switch (statType)
         {

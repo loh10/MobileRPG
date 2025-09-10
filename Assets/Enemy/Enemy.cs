@@ -1,20 +1,33 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Events;
-public class Enemy : MonoBehaviour
-{
-    public Button dropButton;
-    public Drop drop;
 
-    public void Start()
+[CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
+public class Enemy : ScriptableObject
+{
+    public string enemyName;
+    public Stats enemyStats;
+    public Drop enemyDrop;
+    public Sprite enemySprite;
+    public bool isDead = false;
+
+    public void DropItem()
     {
-        dropButton.onClick.AddListener(DropItem);
+        OnEnemyKilled.Invoke(enemyDrop);
+        OnExperienceGained.Invoke(enemyDrop.experience);
+        Debug.Log("Dropped Item");
     }
 
-    private void DropItem()
+    public Enemy Clone()
     {
-        OnEnemyKilled.Invoke(drop);
-        Debug.Log("Dropped Item");
+        Enemy clone = CreateInstance<Enemy>();
+        clone.enemyName = this.enemyName;
+        clone.enemySprite = this.enemySprite;
+        clone.enemyStats = this.enemyStats.Clone();
+        clone.enemyDrop = this.enemyDrop;
+        clone.isDead = this.isDead;
+        return clone;
     }
 }

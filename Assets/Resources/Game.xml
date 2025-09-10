@@ -5,7 +5,7 @@
             <line>You wake up in an empty room</line>
             <line>Oh a butterfly</line>
             <line>A person says hello to you</line>
-            <line>You are in a strange place</line>
+            <line>You're in a strange place</line>
             <line>You walk in the woods</line>
             <line>I need to think of a sentence</line>
             <line>A spider in the bathroom</line>
@@ -13,33 +13,89 @@
         </Story>
         <Menu>
             <fight>Fight</fight>
+            <shop>Shop</shop>
             <story>Story</story>
             <walk>Walk</walk>
             <user>User</user>
+            <sell>Sell</sell>
             <level>Level</level>
             <inventory>Inventory</inventory>
             <equip>Equip</equip>
+            <price>Price</price>
+            <cancel>Cancel</cancel>
+            <confirm>Confirm</confirm>
+            <fastsell>Fast Sell</fastsell>
+            <buy>Buy</buy>
+            <disconnect>Sign out</disconnect>
         </Menu>
+        <Equipment>
+            <Weapons>
+                <baseSword>basic sword</baseSword>
+                <flameSword>flame sword</flameSword>
+            </Weapons>
+            <ChestPlate>
+                <baseChestplate>basic chestplate</baseChestplate>
+                <steelChestplate>steel chestplate</steelChestplate>
+            </ChestPlate>
+            <Legs>
+                <thunderBoot>thunder boot</thunderBoot>
+            </Legs>
+            <Pets>
+                <snake>snake</snake>
+            </Pets>
+        </Equipment>
+        <Monsters>
+            <craby>Craby</craby>
+            <dragon>Dragon</dragon>
+        </Monsters>
     </English>
     <French>
         <Story>
-            <line>Tu te reveilles dans une chambre vide</line>
+            <line>Tu te réveilles dans une chambre vide</line>
             <line>Oh un papillon</line>
-            <line>Une personne te dis bonjour</line>
-            <line>Tu es dans un endroit etrange</line>
+            <line>Une personne te dit bonjour</line>
+            <line>Tu es dans un endroit étrange</line>
             <line>Tu te balades dans la foret</line>
-            <line>Faut que je reflechisse a une phrase</line>
-            <line>Une araignee dans la salle de bain</line>
+            <line>Faut que je réfléchisse à une phrase</line>
+            <line>Une araignée dans la salle de bain</line>
             <line>Aucune inspiration</line>
         </Story>
         <Menu>
             <fight>Combat</fight>
+            <shop>Boutique</shop>
             <story>Histoire</story>
             <walk>Marcher</walk>
+            <sell>Vendre</sell>
             <user>Utilisateur</user>
             <level>Niveau</level>
             <inventory>Inventaire</inventory>
-            <equip>Equiper</equip>
+            <equip>Équiper</equip>
+            <price>Prix</price>
+            <cancel>Annuler</cancel>
+            <confirm>Confirmer</confirm>
+            <fastsell>Vente Rapide</fastsell>
+            <buy>Acheter</buy>
+            <disconnect>Déconnexion</disconnect>
         </Menu>
+        <Equipment>
+            <Weapons>
+                <baseSword>épée basique</baseSword>
+                <flameSword>épée enflammée</flameSword>
+            </Weapons>
+            <ChestPlate>
+                <baseChestplate>armure de base</baseChestplate>
+                <steelChestplate>armure en acier</steelChestplate>
+            </ChestPlate>
+            <Legs>
+                <thunderBoot>botte de foudre</thunderBoot>
+            </Legs>
+            <Pets>
+                <snake>serpent</snake>
+            </Pets>
+        </Equipment>
+        <Monsters>
+            <craby>Craby</craby>
+            <dragon>Dragon</dragon>
+        </Monsters>
     </French>
 </Game>

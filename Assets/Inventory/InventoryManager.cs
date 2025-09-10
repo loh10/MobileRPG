@@ -7,8 +7,8 @@ using static Utils;
 
 public class InventoryManager : MonoBehaviour
 {
-    private static InventoryManager _instance;
-    public List<Item> currentsItems = new ();
+    public static InventoryManager instance;
+    public List<Item> currentsItems = new();
     public Item[] allItems;
     public GameObject itemDisplayPrefab;
     public VerticalLayoutGroup verticalLayoutGroup;
@@ -23,17 +23,19 @@ public class InventoryManager : MonoBehaviour
     {
         OnEnemyKilled.AddListener(AddItem);
         OnItemEquipped.AddListener(EquipItem);
-        if (_instance == null)
+        if (instance == null)
         {
-            _instance = this;
+            instance = this;
         }
 
         OnUserConnected.AddListener(arg0 => LoadItems());
+        OnItemSold.AddListener(SellItem);
+        OnItemBuy.AddListener(BuyItem);
     }
 
-    public void SellItem(Item item)
+    private void SellItem(Item item,int price)
     {
-        // Logic to sell the item
+        User.instance.AddGold(price);
         RemoveItem(item);
     }
 
@@ -72,17 +74,45 @@ public class InventoryManager : MonoBehaviour
         newItem.SetItem(item);
     }
 
+    private void BuyItem(Item item, int price)
+    {
+        AddItem(item);
+        SaveInventory();
+    }
+
     private void EquipItem(Item item)
     {
         if (ItemTypeAlreadyEquipped(item))
             UnequipItem(item);
         RemoveItem(item);
+        
     }
 
     private void UnequipItem(Item item)
     {
-        AddItem(item);
-        OnItemUnequipped.Invoke(item);
+        Item currentlyEquipped = GetCurrentlyEquippedItem(item.itemType);
+        if (currentlyEquipped != null)
+        {
+            AddItem(currentlyEquipped);
+            OnItemUnequipped.Invoke(currentlyEquipped);
+        }
+    }
+
+    private Item GetCurrentlyEquippedItem(EItemTypes type)
+    {
+        switch (type)
+        {
+            case EItemTypes.Weapons:
+                return weaponSprite.item;
+            case EItemTypes.ChestPlate:
+                return chestSprite.item;
+            case EItemTypes.Legs:
+                return legSprite.item;
+            case EItemTypes.Pets:
+                return petSprite.item;
+            default:
+                return null;
+        }
     }
 
     private bool ItemTypeAlreadyEquipped(Item item)
@@ -92,7 +122,7 @@ public class InventoryManager : MonoBehaviour
             case EItemTypes.Weapons:
                 if (weaponSprite.item != null) return true;
                 break;
-            case EItemTypes.Chests:
+            case EItemTypes.ChestPlate:
                 if (chestSprite.item != null) return true;
                 break;
             case EItemTypes.Legs:
@@ -140,7 +170,7 @@ public class InventoryManager : MonoBehaviour
 
     private void LoadItems()
     {
-        LoadInventoryJsonFromPlayFab("PlayerInventory", json =>
+        LoadJsonFromPlayFab("PlayerInventory", json =>
         {
             PlayerInventory playerInventory = JsonUtility.FromJson<PlayerInventory>(json);
             currentsItems.Clear();
@@ -159,7 +189,7 @@ public class InventoryManager : MonoBehaviour
         });
     }
 
-    private void EquipLoadedItems(int item_id,EquipmentDisplay display)
+    private void EquipLoadedItems(int item_id, EquipmentDisplay display)
     {
         Item itemToEquip = Array.Find(allItems, i => i.itemId == item_id);
         if (itemToEquip != null)
@@ -167,6 +197,11 @@ public class InventoryManager : MonoBehaviour
             OnItemEquipped.Invoke(itemToEquip);
             display.DisplayItem(itemToEquip);
         }
+    }
 
+    public Item GetItemById(int item_id)
+    {
+        Item item = Array.Find(instance.allItems, i => i.itemId == item_id);
+        return item;
     }
 }
