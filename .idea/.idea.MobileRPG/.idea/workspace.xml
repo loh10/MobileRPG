@@ -5,62 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84669dc6-d8cc-4ef5-a6b9-17583b7181e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Stats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Enemy/Stats.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/AndroidProjectSystem.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Sprite/Enemy1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Sprite/Enemy1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inventory/InventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Inventory/StatsDisplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inventory/StatsDisplayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject/Chest.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/ScriptableObject/Chest.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites/Chest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest/Sprites/Chest.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDisplayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDisplayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject/Snake.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/ScriptableObject/Snake.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites/Snake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Pets/Sprites/Snake.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject/Sword.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/ScriptableObject/Sword.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites/Sword.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Weapons/Sprites/Sword.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Managers/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Managers/ConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/Icon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/Icon1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/banner1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Assets/banner1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/DisplayUserInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/DisplayUserInformation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/UserState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/UserStat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/UserState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/UserStat.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Story.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Story/StoryDisplayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Inventory/ItemDisplay.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Inventory/ItemDisplay.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Scripts/PanelDisplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Scripts/PanelDisplayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Utils/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Utils/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Events.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Utils/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utils/Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +175,8 @@
       <workItem from="1757334585105" duration="7833000" />
       <workItem from="1757342858691" duration="7564000" />
       <workItem from="1757412109557" duration="9546000" />
+      <workItem from="1757520169356" duration="628000" />
+      <workItem from="1757583402808" duration="4716000" />
     </task>
     <servers />
   </component>

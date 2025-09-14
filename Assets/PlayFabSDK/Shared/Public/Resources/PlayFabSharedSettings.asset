@@ -21,9 +21,9 @@ MonoBehaviour:
   RequestTimeout: 2000
   RequestKeepAlive: 1
   CompressResponses: 0
-  DecompressWithDownloadHandler: 1
+  DecompressWithDownloadHandler: 0
   LogLevel: 12
   LoggerHost: 
   LoggerPort: 0
   EnableRealTimeLogging: 0
-  LogCapLimit: 30
+  LogCapLimit: 100

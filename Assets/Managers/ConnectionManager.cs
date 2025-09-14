@@ -36,7 +36,7 @@ public class ConnectionManager : MonoBehaviour
         var request = new LoginWithCustomIDRequest
         {
             CustomId = usernameInputField.text,
-            CreateAccount = false
+            CreateAccount = true
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
     }
@@ -62,46 +62,47 @@ public class ConnectionManager : MonoBehaviour
                     Debug.LogError("Mot de passe incorrect.");
                 }
             }
+            else
+            {
+                var request = new LoginWithCustomIDRequest
+                {
+                    CustomId = usernameInputField.text,
+                    CreateAccount = true
+                };
+                PlayFabClientAPI.LoginWithCustomID(request, (result) => { CreateNewAccount(); }, OnLoginFailure);
+            }
         }, OnLoginFailure);
     }
+
+    private void CreateNewAccount()
+    {
+        var updateRequest = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+                { "password", Encryption(passwordInputField.text) }
+            }
+        };
+        PlayFabClientAPI.UpdateUserData(updateRequest, (update_result) =>
+        {
+            var displayNameRequest = new UpdateUserTitleDisplayNameRequest
+            {
+                DisplayName = usernameInputField.text
+            };
+            PlayFabClientAPI.UpdateUserTitleDisplayName(displayNameRequest, (display_name_result) =>
+            {
+                Debug.Log("Compte créé avec succès et display name défini !");
+            }, OnLoginFailure);
+
+        }, OnLoginFailure);
+    }
+
+
 
     private void OnLoginFailure(PlayFabError error)
     {
         Debug.LogError(error.GenerateErrorReport());
     }
 
-    public void CreateAccount()
-    {
-        var request = new LoginWithCustomIDRequest
-        {
-            CustomId = usernameInputField.text,
-            CreateAccount = true
-        };
-        PlayFabClientAPI.LoginWithCustomID(request, (result) =>
-        {
-            var updateRequest = new UpdateUserDataRequest
-            {
-                Data = new Dictionary<string, string>
-                {
-                    { "password", Encryption(passwordInputField.text) }
-                }
-            };
-            PlayFabClientAPI.UpdateUserData(updateRequest, (update_result) =>
-            {
-                var displayNameRequest = new UpdateUserTitleDisplayNameRequest
-                {
-                    DisplayName = usernameInputField.text
-                };
-                PlayFabClientAPI.UpdateUserTitleDisplayName(displayNameRequest, (display_name_result) =>
-                {
-                    Debug.Log("Compte créé avec succès et display name défini !");
-                }, OnRegisterFailure);
-            }, OnRegisterFailure);
-        }, OnRegisterFailure);
-    }
 
-    private void OnRegisterFailure(PlayFabError error)
-    {
-        Debug.LogError(error.GenerateErrorReport());
-    }
 }
