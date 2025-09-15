@@ -33,7 +33,7 @@ public class StoryManager : MonoBehaviour
         {
             int enemyIndex = Random.Range(0, enemyManager.enemiesList.Count);
             enemyManager.SpawnEnemy(enemyIndex);
-            storyText.text = "<color=red>New Enemy Approached! </color>\n" + XmlMonsterName(enemyManager.enemiesList[enemyIndex].enemyName);
+            storyText.text = $"<color=red>{XmlLineDisplayer("newEnemy")} </color>\n" + XmlMonsterName(enemyManager.enemiesList[enemyIndex].enemyName);
             walkButton.interactable = false;
             return;
         }

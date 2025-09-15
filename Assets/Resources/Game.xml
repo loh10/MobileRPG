@@ -27,6 +27,7 @@
             <fastsell>Fast Sell</fastsell>
             <buy>Buy</buy>
             <disconnect>Sign out</disconnect>
+            <newEnemy>New Enemy Approached !</newEnemy>
         </Menu>
         <Equipment>
             <Weapons>
@@ -76,6 +77,7 @@
             <fastsell>Vente Rapide</fastsell>
             <buy>Acheter</buy>
             <disconnect>Déconnexion</disconnect>
+            <newEnemy>Un nouvel ennemi est apparu !</newEnemy>
         </Menu>
         <Equipment>
             <Weapons>
