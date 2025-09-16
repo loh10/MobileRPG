@@ -71,7 +71,7 @@ PlayerSettings:
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 1
   androidBlitType: 2
-  androidResizeableActivity: 1
+  androidResizeableActivity: 0
   androidDefaultWindowWidth: 1920
   androidDefaultWindowHeight: 1080
   androidMinimumWindowWidth: 400
@@ -140,7 +140,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.0.5
+  bundleVersion: 1.1
   preloadedAssets:
   - {fileID: 0}
   metroInputSource: 0
@@ -295,7 +295,9 @@ PlayerSettings:
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 53a33897674a60f44a6700c9389e0c38, type: 3}
+      - {fileID: 2800000, guid: 53a33897674a60f44a6700c9389e0c38, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -325,7 +327,8 @@ PlayerSettings:
       m_Height: 81
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 53a33897674a60f44a6700c9389e0c38, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -355,7 +358,8 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 53a33897674a60f44a6700c9389e0c38, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
